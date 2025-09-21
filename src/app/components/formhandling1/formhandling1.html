@@ -1,0 +1,15 @@
+<form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+
+    <label for="">Enter email</label>
+    <input type="email" name="email" [(ngModel)]="user.email" required>
+
+    <br>
+
+    <label for="">Enter password</label>
+    <input type="password" name="password" [(ngModel)]="user.password" required>
+
+    <br>
+
+    <input type="submit" [disabled]="userForm.invalid">
+
+</form>

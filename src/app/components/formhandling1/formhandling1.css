@@ -1,0 +1,10 @@
+.ng-invalid 
+{
+    background-color: rgb(224, 189, 158);
+}
+
+.ng-valid 
+{
+    background-color: aquamarine;
+}
+
