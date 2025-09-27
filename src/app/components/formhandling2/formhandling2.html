@@ -1,1 +1,45 @@
-<p>formhandling2 works!</p>
+<form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+<label for="">Enter name</label>
+<input type="text" formControlName="name">
+<div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+
+    <p *ngIf="userForm.get('name')?.errors?.['required']">name is required</p>
+    <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name is too small </p>
+
+</div>
+
+<br>
+
+<label for="">Enter email</label>
+<input type="text" formControlName="email">
+
+<div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+
+    <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+    <p *ngIf="userForm.get('email')?.errors?.['email']">Invalid email address </p>
+
+</div>
+
+
+
+
+
+<br>
+
+<label for="">Enter password</label>
+<input type="password" formControlName="password">``
+
+<div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+
+    <p *ngIf="userForm.get('password')?.errors?.['required']">password is required</p>
+    <p *ngIf="userForm.get('password')?.errors?.['commonPassword']">This is commonly used password </p>
+
+</div>
+
+<br>
+
+<input type="submit">
+
+
+</form>
